@@ -196,6 +196,7 @@ public class SetupActivity extends AppCompatActivity {
             userMap.put("status", "Hi there! I'm using the Social Network.");
             userMap.put("gender", "null");
             userMap.put("dob", "null");
+            userMap.put("secretSantaTo", "none");
 
             userRef.updateChildren(userMap).addOnCompleteListener(new OnCompleteListener() {
                 @Override

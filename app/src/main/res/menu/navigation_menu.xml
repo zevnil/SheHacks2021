@@ -2,10 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/nav_post"
-        android:title="Add a post">
-    </item>
-    <item
         android:id="@+id/nav_profile"
         android:title="Profile"
         android:icon="@drawable/profile_icon">
@@ -15,17 +11,8 @@
         android:title="Home">
     </item>
     <item
-        android:id="@+id/nav_friends"
-        android:title="Friends">
-    </item>
-
-    <item
-        android:id="@+id/nav_find_friends"
-        android:title="Find Friends">
-    </item>
-    <item
-        android:id="@+id/nav_messages"
-        android:title="Messages">
+        android:id="@+id/nav_add_community"
+        android:title="Start a Community">
     </item>
     <item
         android:id="@+id/nav_settings"

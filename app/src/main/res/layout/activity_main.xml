@@ -15,13 +15,13 @@
             android:id="@+id/main_activity_toolbar"
             layout="@layout/app_bar_layout"></include>
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:onClick="takeToCommunityActivity"
-            android:text="Button" />
+        <ListView
+            android:id="@+id/main_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/main_activity_toolbar"
+            android:layout_marginTop="0dp"
+            android:padding="10dp"></ListView>
 
         <!--
         <FrameLayout
