@@ -230,6 +230,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.nav_home:
                 Toast.makeText(this, "Home activity", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.nav_join_community:
+                Toast.makeText(this, "JoinCommunity activity", Toast.LENGTH_SHORT).show();
+                Intent joinCommunityIntent = new Intent(MainActivity.this, JoinCommunityActivity.class);
+                startActivity(joinCommunityIntent);
+                break;
             case R.id.nav_add_community:
                 Toast.makeText(this, "AddCommunity activity", Toast.LENGTH_SHORT).show();
                 Intent addCommunityIntent = new Intent(MainActivity.this, AddCommunityActivity.class);

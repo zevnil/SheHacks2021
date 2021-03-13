@@ -11,6 +11,10 @@
         android:title="Home">
     </item>
     <item
+        android:id="@+id/nav_join_community"
+        android:title="Join Communities">
+    </item>
+    <item
         android:id="@+id/nav_add_community"
         android:title="Start a Community">
     </item>

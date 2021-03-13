@@ -87,13 +87,13 @@ public class AddCommunityActivity extends AppCompatActivity {
             loadingBar.show();
             loadingBar.setCanceledOnTouchOutside(true);
 
-            HashMap userMap = new HashMap();
-            userMap.put("name", communityName);
-            userMap.put("about", communityAbout);
+            HashMap communityMap = new HashMap();
+            communityMap.put("name", communityName);
+            communityMap.put("about", communityAbout);
 
             communitiesRef = FirebaseDatabase.getInstance().getReference().child("Communities").child(communityName);
 
-            communitiesRef.child("Details").updateChildren(userMap).addOnCompleteListener(new OnCompleteListener() {
+            communitiesRef.child("Details").updateChildren(communityMap).addOnCompleteListener(new OnCompleteListener() {
                 @Override
                 public void onComplete(@NonNull Task task) {
                     if(task.isSuccessful()) {
@@ -101,6 +101,7 @@ public class AddCommunityActivity extends AppCompatActivity {
                         addCommunityToUserDatabase(communityName);
                         addUserToCommunityDatabase();
                         loadingBar.dismiss();
+                        sendUserToMainActivity();
                     }else{
                         String message = task.getException().getMessage();
                         Toast.makeText(AddCommunityActivity.this, "Error(Unable to create community): "+message, Toast.LENGTH_SHORT).show();
@@ -120,7 +121,6 @@ public class AddCommunityActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(AddCommunityActivity.this, "Added you to the community", Toast.LENGTH_SHORT).show();
-                            sendUserToMainActivity();
                         }else{
                             String message = task.getException().getMessage();
                             Toast.makeText(AddCommunityActivity.this, "Error(Unable to add you to the community): "+message, Toast.LENGTH_SHORT).show();
@@ -130,13 +130,20 @@ public class AddCommunityActivity extends AppCompatActivity {
     }
 
     private void addCommunityToUserDatabase(String communityName) {
-        userRef.child(communityName).child("date").setValue(saveCurrentDate)
+
+        HashMap userMap = new HashMap();
+        userMap.put("secretSantaTo", "none");
+        userMap.put("secretSanta", "none");
+        userMap.put("date", saveCurrentDate);
+        userMap.put("messageReceived", "none");
+        userMap.put("messageSent", "none");
+
+        userRef.child(communityName).updateChildren(userMap)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(AddCommunityActivity.this, "Added to your communities", Toast.LENGTH_SHORT).show();
-                            sendUserToMainActivity();
                         }else{
                             String message = task.getException().getMessage();
                             Toast.makeText(AddCommunityActivity.this, "Error(Unable to add to your communities): "+message, Toast.LENGTH_SHORT).show();
