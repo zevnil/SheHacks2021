@@ -11,8 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SheHacks2021">
-        <activity android:name=".AddCommunityActivity"
-            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".GroupChatActivity" />
+        <activity
+            android:name=".AddCommunityActivity"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".CommunityActivity"
             android:parentActivityName=".MainActivity" />
