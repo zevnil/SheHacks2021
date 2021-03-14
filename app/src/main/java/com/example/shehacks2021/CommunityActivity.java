@@ -69,7 +69,7 @@ public class CommunityActivity extends AppCompatActivity {
                 if (snapshot.exists()) {
                     String secretSantaTo = snapshot.child("secretSantaTo").getValue().toString();
                     if (secretSantaTo.equals("waiting")) {
-                        Toast.makeText(CommunityActivity.this, "Searching for a match...", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(CommunityActivity.this, "Searching for a match...", Toast.LENGTH_SHORT).show();
                         searchForAMatch();
                     } else if(!secretSantaTo.equals("none")){
                         if(!snapshot.hasChild("receiverInfo")){
@@ -144,7 +144,7 @@ public class CommunityActivity extends AppCompatActivity {
         communitiesRef.child("Volunteers").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                volunteersCount = (int)snapshot.getChildrenCount();
+                //volunteersCount = (int)snapshot.getChildrenCount();
 
                 String volunteerIDstr = snapshot.getKey().toString();
                 volunteersList.add(volunteerIDstr);
@@ -170,6 +170,7 @@ public class CommunityActivity extends AppCompatActivity {
 
             }
         });
+        volunteersCount = volunteersList.size();
         if(volunteersCount > 1){
             flag = 0;
             for(String volunteerID: volunteersList){
@@ -213,7 +214,7 @@ public class CommunityActivity extends AppCompatActivity {
                 receiverInfo += "Pin code: " + snapshot.child("pincode").getValue().toString() + "\n";
                 receiverInfo += "Phone No: " + snapshot.child("phoneNo").getValue().toString() + "\n";
                 userRef.child("receiverInfo").setValue(receiverInfo);
-                Toast.makeText(CommunityActivity.this, "Receiver info updated in database", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(CommunityActivity.this, "Receiver info updated in database", Toast.LENGTH_SHORT).show();
             }
 
             @Override

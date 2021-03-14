@@ -7,10 +7,6 @@
         android:icon="@drawable/profile_icon">
     </item>
     <item
-        android:id="@+id/nav_home"
-        android:title="Home">
-    </item>
-    <item
         android:id="@+id/nav_join_community"
         android:title="Join Communities">
     </item>

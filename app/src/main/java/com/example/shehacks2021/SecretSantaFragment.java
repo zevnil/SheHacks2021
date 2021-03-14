@@ -125,7 +125,7 @@ public class SecretSantaFragment extends Fragment {
         volunteerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "Volunteer button clicked", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(), "Volunteer button clicked", Toast.LENGTH_SHORT).show();
 
                 if(addressAvailable.equals("no"))
                     Toast.makeText(getContext(), "Please upload your contact details before joining.", Toast.LENGTH_SHORT).show();
