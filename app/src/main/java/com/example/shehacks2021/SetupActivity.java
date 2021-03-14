@@ -193,9 +193,14 @@ public class SetupActivity extends AppCompatActivity {
             userMap.put("username", usernameStr);
             userMap.put("fullname", fullnameStr);
             userMap.put("country", countryStr);
-            userMap.put("status", "Hi there! I'm using the Social Network.");
-            userMap.put("gender", "null");
-            userMap.put("dob", "null");
+            userMap.put("gender", "N/A");
+            userMap.put("dob", "N/A");
+            userMap.put("addressL1", "N/A");
+            userMap.put("addressL2", "N/A");
+            userMap.put("city", "N/A");
+            userMap.put("pincode", "N/A");
+            userMap.put("phoneNo", "N/A");
+            userMap.put("address", "N/A");
 
             userRef.updateChildren(userMap).addOnCompleteListener(new OnCompleteListener() {
                 @Override

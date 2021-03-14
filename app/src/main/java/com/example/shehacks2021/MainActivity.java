@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -226,6 +227,8 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.nav_profile:
                 Toast.makeText(this, "Profile activity", Toast.LENGTH_SHORT).show();
+                Intent profileIntent = new Intent(MainActivity.this, ProfileActivity.class);
+                startActivity(profileIntent);
                 break;
             case R.id.nav_home:
                 Toast.makeText(this, "Home activity", Toast.LENGTH_SHORT).show();
@@ -250,4 +253,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
+
+
 }

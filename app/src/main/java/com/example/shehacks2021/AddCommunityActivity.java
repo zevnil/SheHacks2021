@@ -136,7 +136,9 @@ public class AddCommunityActivity extends AppCompatActivity {
         userMap.put("secretSanta", "none");
         userMap.put("date", saveCurrentDate);
         userMap.put("messageReceived", "none");
-        userMap.put("messageSent", "none");
+        userMap.put("messageSent", "no");
+        userMap.put("sentStatus", "no");
+        userMap.put("receivedStatus", "no");
 
         userRef.child(communityName).updateChildren(userMap)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
